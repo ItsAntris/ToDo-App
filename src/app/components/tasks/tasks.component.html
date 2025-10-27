@@ -1,0 +1,42 @@
+<div class="task-container mat-elevation-z4">
+  <h2 class="title">Lista de tareas</h2>
+
+  <!-- Formulario para añadir tareas -->
+  <form (ngSubmit)="addTask()" class="add-task">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nueva tarea</mat-label>
+      <input matInput [(ngModel)]="newTask.title" name="title" required />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      <mat-icon>add</mat-icon>
+      Añadir
+    </button>
+  </form>
+
+  <!-- Lista de tareas -->
+  <mat-list>
+    <mat-list-item *ngFor="let task of tasks" class="task-item">
+      <div class="task-content">
+        <mat-checkbox
+          [(ngModel)]="task.completed"
+          (change)="toggleTask(task)"
+        ></mat-checkbox>
+
+        <span class="task-title" [class.completed]="task.completed">
+          {{ task.title }}
+        </span>
+      </div>
+
+      <div class="task-actions">
+        <button mat-icon-button color="primary" (click)="editTask(task)">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>

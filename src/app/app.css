@@ -1,0 +1,21 @@
+/* === Modo Claro (por defecto) === */
+:root {
+  --dialog-bg: #ffffff;
+  --dialog-text: #1f1f1f;
+  --dialog-border: rgba(0, 0, 0, 0.1);
+  --primary-gradient: linear-gradient(90deg, #3a7bd5, #00d2ff);
+  --field-outline: #3a7bd5;
+  --field-label: #666666;
+}
+
+/* === Modo Oscuro automático === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dialog-bg: #1e1e2f;
+    --dialog-text: #f3f3f3;
+    --dialog-border: rgba(255, 255, 255, 0.1);
+    --primary-gradient: linear-gradient(90deg, #3a7bd5, #00d2ff);
+    --field-outline: #4fc3f7;
+    --field-label: #aaaaaa;
+  }
+}

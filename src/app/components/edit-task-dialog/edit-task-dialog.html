@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Editar tarea</h2>
+
+<mat-dialog-content class="dialog-content dark-dialog">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Título</mat-label>
+    <input matInput [(ngModel)]="task.title" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput rows="3" [(ngModel)]="task.description"></textarea>
+  </mat-form-field>
+
+  <mat-checkbox color="primary" [(ngModel)]="task.completed">
+    Marcar como completada
+  </mat-checkbox>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="save()">Guardar</button>
+</mat-dialog-actions>
